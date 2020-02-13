@@ -22,11 +22,11 @@ def new_matrix(rows = 4, cols = 4):
 def print_matrix( matrix ):
     s = ""
     for row in matrix:
-        for col in matrix:
-            s += str(matrix[r][c])+ " "
-            if col == len(matrix[r]):
-                s += "\n"
+        for col in row:
+            s+= str(col) + " "
+        s+= "\n"
     print(s)
+
 #turn the paramter matrix into an identity matrix
 #you may assume matrix is square
 def ident( matrix ):
@@ -36,3 +36,6 @@ def ident( matrix ):
 #m1 * m2 -> m2
 def matrix_mult( m1, m2 ):
     pass
+
+g = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
+print_matrix(g)
