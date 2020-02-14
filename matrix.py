@@ -35,7 +35,15 @@ def ident( matrix ):
 #multiply m1 by m2, modifying m2 to be the product
 #m1 * m2 -> m2
 def matrix_mult( m1, m2 ):
-    pass
+    prod = []
+    temp = 0
+    for h in range(len(m1)):
+        for i in range(4):
+            for w in range(len(m1[0])):
+            temp += m1[h][w]*m2[i][w]
+            prod.append(temp)
+            temp = 0
+    return prod
 
 g = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
 print_matrix(g)
