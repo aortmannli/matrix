@@ -159,5 +159,38 @@ draw_lines(body,screen,b_color)
 draw_lines( eye, screen, e_color )
 draw_lines(lines,screen,l_color)
 draw_lines(shadows,screen,s_color)
+
+print("this is matrix A:")
+g = [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]]
+print_matrix(g)
+print()
+print()
+
+print("this is its identity matrix:")
+f=ident(g)
+print_matrix(f)
+print()
+print()
+
+print("this is matrix A times its identity matrix:")
+g = [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]]
+matrix_mult(f,g)
+print()
+print()
+
+print("this is matrix M1:")
+a= [[1.00,4.00],[2.00,5.00],[3.00,6.00],[1.00,1.00]]
+print_matrix(a)
+b= [[1.00,4.00,7.00,10.00],[2.00,5.00,8.00,11.00],[3.00,6.00,9.00,12.00],[1.00,1.00,1.00,1.00]]
+print()
+print()
+print("this is matrix M2:")
+print_matrix(b)
+print()
+print()
+print("this is matrix M2*M1")
+matrix_mult(b,a)
+
+
 display(screen)
 save_ppm_ascii(screen,'img.ppm')
