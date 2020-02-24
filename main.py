@@ -114,7 +114,7 @@ for a in range(21):
 for a in range(21):
     add_edge(body,350,170-a,0,360,170-a,0)
 for a in range(15):
-    add_edge(body,115,140-a,0,385,140-a,0)
+    add_edge(body,125,140-a,0,375,140-a,0)
 
 #eye matrix
 eye = new_matrix()
