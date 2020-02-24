@@ -81,13 +81,9 @@ add_edge(head,305,310,0,295,310,0)
 
 for a in range(10):
    add_edge(head,160,300+a,0,205,300+a,0)
-for a in range(10):
-    add_edge(head,170,310+a,0,195,310+a,0)
-
-for a in range(10):
+   add_edge(head,170,310+a,0,195,310+a,0)
    add_edge(head,295,300+a,0,340,300+a,0)
-for a in range(10):
-    add_edge(head,305,310+a,0,330,310+a,0)
+   add_edge(head,305,310+a,0,330,310+a,0)
 
 #v
 add_edge(head,160,300,0,160,310,0)
@@ -106,30 +102,62 @@ add_edge(head,205,300,0,295,300,0)
 
 body = new_matrix()
 b_color = h_color
-#main
+#body
+for a in range(80):
+    add_edge(body,190,205-a,0,310,205-a,0)
 #legs
+draw_box(body,150,180,40)
+draw_box(body,310,180,40)
 
+for a in range(21):
+    add_edge(body,140,170-a,0,150,170-a,0)
+for a in range(21):
+    add_edge(body,350,170-a,0,360,170-a,0)
+for a in range(15):
+    add_edge(body,115,140-a,0,385,140-a,0)
+
+#eye matrix
 eye = new_matrix()
 e_color = [255,255,255]
 
 draw_box(eye,170,310,25)
 draw_box(eye,305,310,25)
 
+#everything thats in black
 lines = new_matrix()
 l_color = [0,0,0]
-
+#pupils
 draw_box(lines,175,310,20)
 draw_box(lines,310,310,20)
 
+#mouth
 draw_box(lines,210,270,10)
 draw_box(lines,285,270,10)
-
 for a in range(10):
     add_edge(lines,220,260-a,0,285,260-a,0)
 
+shadows = new_matrix()
+s_color= [50,120,20]
+#legs??
+for a in range(70):
+    add_edge(shadows,190,205-a,0,200,205-a,0)
+    add_edge(shadows,300,205-a,0,310,205-a,0)
+    add_edge(shadows,220,195-a,0,230,195-a,0)
+    add_edge(shadows,270,195-a,0,280,195-a,0)
+draw_box(shadows,180,136,10)
+draw_box(shadows,310,136,10)
+
+draw_box(shadows,180,156,10)
+draw_box(shadows,310,156,10)
+draw_box(shadows,170,166,10)
+draw_box(shadows,320,166,10)
+
+         
 draw_lines(matrix,screen,color)
 draw_lines( head, screen, h_color )
+draw_lines(body,screen,b_color)
 draw_lines( eye, screen, e_color )
 draw_lines(lines,screen,l_color)
+draw_lines(shadows,screen,s_color)
 display(screen)
 save_ppm_ascii(screen,'img.ppm')
